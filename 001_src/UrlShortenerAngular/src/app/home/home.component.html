@@ -1,0 +1,17 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">URL Shortener - Gjirafa</a>
+    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+  </nav>
+  
+  <div class="card m-5" style="width:18rem" *ngIf="userArray">
+    <ul class="list-group">
+      <li class="list-group-item"><strong>First Name : </strong>{{userArray.firstName}}</li>
+      <li class="list-group-item"><strong>Last Name : </strong>{{userArray.lastName}}</li>
+      <li class="list-group-item"><strong>Phone Number : </strong>{{userArray.phoneNumber}}</li>
+      <li class="list-group-item"><strong>Email : </strong>{{userArray.email}}</li>
+      <li class="list-group-item"><strong>UserName : </strong>{{userArray.userName}}</li>
+      <li class="list-group-item"><strong>Address : </strong>{{userArray.address}}</li>
+    </ul>
+  </div>
+
+  <a href="/shortlink" class="btn btn-lg btn-primary">Generate URL Shortener</a>

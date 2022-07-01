@@ -1,0 +1,30 @@
+<h1>Short Link - Gjirafa</h1>
+
+<form novalidate autocomplete="off" #form="ngForm" (submit)="generateShortLink(form)">
+    <input type="hidden" name="id" [value]="service.formData.id">
+    <div class="form-group">
+        <label>Long URL</label>
+        <input class="form-control form-control-lg" placeholder="Enter long url" name="longurl"
+        #longurl="ngModel" [(ngModel)]="service.formData.longurl" required [class.invalid]="longurl.invalid && longurl.touched">
+    </div>
+    <div class="form-group">
+        <label>URL</label>
+        <input class="form-control form-control-lg" placeholder="Enter pivot url" name="url"
+        #url="ngModel" [(ngModel)]="service.formData.url" required [class.invalid]="url.invalid && url.touched">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>
+
+<table>
+    <tbody>
+        <tr *ngFor="let link of service.list">
+            <td>{{link.url}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="/shortlink-redirect" class="btn btn-lg btn-primary">Redirect short URL</a>
+
+<a href="/home" class="btn btn-lg btn-default">Back to home</a>
